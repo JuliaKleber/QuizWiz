@@ -1,26 +1,18 @@
 puts 'Cleaning database...'
+
 User.destroy_all
 Quiz.destroy_all
 Question.destroy_all
 QuizQuestion.destroy_all
 
-
-
-
-
-
-# 5.times do
-#   Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.full_address,
-#                     phone_number: Faker::PhoneNumber.phone_number,
-#                     category: %w[chinese italian japanese french belgian].sample)
-# end
+puts 'Creating users...'
 
 User.create(username: 'Aisiri')
 User.create(username: 'Bilal')
 User.create(username: 'Elena')
 User.create(username: 'Julia')
 
-puts 'Creating users...'
+puts 'Creating questions...'
 
 Question.create(content: 'What is the capital of France?', choice_one: 'Paris', choice_two: 'London')
 Question.create(content: 'Which planet is known as the "Red Planet"?', choice_one: 'Mars', choice_two: 'Venus')
@@ -33,8 +25,19 @@ Question.create(content: 'What is the capital of Japan?', choice_one: 'Beijing',
 Question.create(content: 'What is the currency of the United Kingdom?', choice_one: 'Euro', choice_two: 'Pound Sterling')
 Question.create(content: 'What is the largest ocean on Earth?', choice_one: 'Atlantic Ocean', choice_two: 'Pacific Ocean')
 
-puts 'Creating questions...'
-
 puts 'Creating quizzes...'
 
+Quiz.create(user_id: 0, name: 'Easy Quiz')
+Quiz.create(user_id: 1, name: 'Really Easy Quiz')
+Quiz.create(user_id: 2, name: 'Rather Easy Quiz')
+Quiz.create(user_id: 3, name: 'Easy Peasy Quiz')
+
 puts 'Creating connections between questions and quizzes...'
+
+for i in (0..3) do
+  5.times do
+    QuizQuestion.create(quiz_id: 0, question_id: rand(0..9))
+  end
+end
+
+puts 'Done!'
