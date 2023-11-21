@@ -2,4 +2,17 @@
   <div class="container">
     <h1><strong>Bring The Fun Back</strong>!</h1>
   </div>
+  <% if true %>
+<%# user_signed_in? %>
+  <%= link_to new_quiz_path do %>
+    <button>Create a new quiz</button>
+  <% end %>
+  <%= link_to quizzes_path do %>
+    <button>Play a quiz</button>
+  <% end %>
+<% else %>
+  <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
+  <button>Sign in</button>
+  <button>Log in</button>
+<% end %>
 </div>
