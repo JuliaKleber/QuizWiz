@@ -1,0 +1,40 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-team">
+  <div class="container-fluid">
+    <div>
+    <h3>Quiz-Wiz</h3>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "dice.jpg" %>
+    <% end %>
+    </div>
+    <div>
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Quiz", "#", class: "nav-link" %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "SignUp", "#", class: "nav-link" %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "Login", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "image.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Create New Quiz", "#", class: "dropdown-item" %>
+              <%= link_to "Update Quiz", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
