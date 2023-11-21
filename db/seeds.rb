@@ -7,6 +7,7 @@ User.destroy_all
 
 puts 'Creating users...'
 
+
 users = []
 
 user = User.create(user_name: 'Aisiri', email: "Aisiri@quiz-wiz.com", password: "123456", password_confirmation: "123456")
@@ -17,9 +18,6 @@ user = User.create(user_name: 'Elena', email: "Elena@quiz-wiz.com", password: "1
 users << user
 user = User.create(user_name: 'Julia', email: "Julia@quiz-wiz.com", password: "123456", password_confirmation: "123456")
 users << user
-
-
-
 
 puts 'Creating questions...'
 
@@ -76,6 +74,7 @@ quizzes.each do |q|
   5.times do
     qq = QuizQuestion.new(quiz_id: q.id, question_id: questions.sample.id)
     qq.save
+
   end
 end
 
