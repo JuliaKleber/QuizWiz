@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Quizz Wizz</h1>
+<% if true %>
+<%# user_signed_in? %>
+  <%= link_to new_quiz_path do %>
+    <button>Create a new quiz</button>
+  <% end %>
+  <%= link_to quizzes_path do %>
+    <button>Play a quiz</button>
+  <% end %>
+<% else %>
+  <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
+  <button>Sign in</button>
+  <button>Log in</button>
+<% end %>
