@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "questions/:id", to: "questions#show"
+
   # Visit homepage as visitor & sign-up
   # // Alternate: if you are already a user the homepage will be
   # to either play a quiz or create a quiz

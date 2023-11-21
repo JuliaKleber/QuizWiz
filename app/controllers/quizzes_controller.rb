@@ -12,14 +12,20 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    @quiz = Quiz.new
+    @quiz = Quiz.new(quiz_params)
+    if @quiz.save
+      redirect_to quiz_path(@quiz), notice: 'Quiz was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @quiz = Quiz.find(params[:id])
+    @quiz = Quiz.new(params[:id])
   end
 
   def update
+    @quiz = Quiz.find(params[:id])
     @quiz.update
   end
 
@@ -32,6 +38,12 @@ class QuizzesController < ApplicationController
   end
 
   def mine
+  end
+
+  private
+
+  def quiz_params
+    params.require(:quiz).permit(:name)
   end
 end
 

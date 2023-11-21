@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
       @quiz_question.question = @question
       redirect_to new_quiz_path(@quiz)
     else
-      render :new_quiz_path(@quiz), status: :unprocessable_entity
+      render :new_quiz_path, status: :unprocessable_entity
     end
   end
 
