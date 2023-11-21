@@ -36,7 +36,7 @@ puts 'Creating connections between questions and quizzes...'
 
 for i in (0..3) do
   5.times do
-    QuizQuestion.create(quiz_id: 0, question_id: rand(0..9))
+    QuizQuestion.create(quiz_id: i, question_id: rand(0..9))
   end
 end
 
