@@ -1,0 +1,16 @@
+<p>Here you can create a new quiz</p>
+
+<div class="container col-lg-6 mx-auto m-3">
+  <%= simple_form_for(@quiz) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+    </div>
+
+    <div class="form-actions d-flex justify-content-center">
+      <%= f.button :submit, class: "button" %>
+    </div>
+  <% end %>
+</div>
