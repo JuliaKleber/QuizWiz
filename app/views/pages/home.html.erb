@@ -1,5 +1,8 @@
-<h1>Quizz Wizz</h1>
-<% if true %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url('game.jpg') %>);">
+  <div class="container">
+    <h1><strong>Bring The Fun Back</strong>!</h1>
+  </div>
+  <% if true %>
 <%# user_signed_in? %>
   <%= link_to new_quiz_path do %>
     <button>Create a new quiz</button>
@@ -12,3 +15,4 @@
   <button>Sign in</button>
   <button>Log in</button>
 <% end %>
+</div>
