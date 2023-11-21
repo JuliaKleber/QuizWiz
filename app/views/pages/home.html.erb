@@ -1,9 +1,10 @@
 <h1>Quizz Wizz</h1>
-<% if user_signed_in? %>
-  <%= link_to quizzes_new, do %>
+<% if true %>
+<%# user_signed_in? %>
+  <%= link_to new_quiz_path do %>
     <button>Create a new quiz</button>
   <% end %>
-  <%= link_to quizzes_new, do %>
+  <%= link_to quizzes_path do %>
     <button>Play a quiz</button>
   <% end %>
 <% else %>
