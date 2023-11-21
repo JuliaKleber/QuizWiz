@@ -27,16 +27,16 @@ Question.create(content: 'What is the largest ocean on Earth?', choice_one: 'Atl
 
 puts 'Creating quizzes...'
 
-Quiz.create(user_id: 0, name: 'Easy Quiz')
-Quiz.create(user_id: 1, name: 'Really Easy Quiz')
-Quiz.create(user_id: 2, name: 'Rather Easy Quiz')
-Quiz.create(user_id: 3, name: 'Easy Peasy Quiz')
+Quiz.create(user_id: 1, name: 'Easy Quiz')
+Quiz.create(user_id: 2, name: 'Really Easy Quiz')
+Quiz.create(user_id: 3, name: 'Rather Easy Quiz')
+Quiz.create(user_id: 4, name: 'Easy Peasy Quiz')
 
 puts 'Creating connections between questions and quizzes...'
 
-for i in (0..3) do
+for i in (1..4) do
   5.times do
-    QuizQuestion.create(quiz_id: i, question_id: rand(0..9))
+    QuizQuestion.create(quiz_id: i, question_id: rand(1..10))
   end
 end
 
