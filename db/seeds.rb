@@ -7,10 +7,10 @@ QuizQuestion.destroy_all
 
 puts 'Creating users...'
 
-User.create(username: 'Aisiri')
-User.create(username: 'Bilal')
-User.create(username: 'Elena')
-User.create(username: 'Julia')
+User.create(user_name: 'Aisiri')
+User.create(user_name: 'Bilal')
+User.create(user_name: 'Elena')
+User.create(user_name: 'Julia')
 
 puts 'Creating questions...'
 
