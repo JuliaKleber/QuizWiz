@@ -1,18 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url('game.jpg') %>);">
   <div class="container">
     <h1><strong>Bring The Fun Back</strong>!</h1>
-  </div>
   <% if true %>
-<%# user_signed_in? %>
-  <%= link_to new_quiz_path do %>
-    <button>Create a new quiz</button>
+  <%# user_signed_in? %>
+    <%= link_to new_quiz_path do %>
+      <button class="btn-gradient">Create a new quiz</button>
   <% end %>
-  <%= link_to quizzes_path do %>
-    <button>Play a quiz</button>
+    <%= link_to quizzes_path do %>
+      <button class="btn-gradient">Play a quiz</button>
   <% end %>
-<% else %>
-  <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
-  <button>Sign in</button>
-  <button>Log in</button>
-<% end %>
+  <% else %>
+    <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
+    <button>Sign in</button>
+    <button>Log in</button>
+  <% end %>
+  </div>
 </div>
