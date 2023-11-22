@@ -3,7 +3,7 @@
     <div>
     <h3>Quiz-Wiz</h3>
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "dice.jpg" %>
+      <%= image_tag "QUIZ_WIZ-removebg-preview.png" %>
     <% end %>
     </div>
     <div>
@@ -25,11 +25,11 @@
             <%= image_tag "image.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             </div>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+
+        <%# else
+            = link_to "Login", new_user_session_path, class: "nav-link"
+        end %>
+
       </ul>
     </div>
   </div>
