@@ -18,7 +18,7 @@
             <%= link_to "Logout", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete} %>
           </li>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%# cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           </li>
         <% else %>
           <li class="nav-item">
