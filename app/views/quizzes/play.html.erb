@@ -1,0 +1,16 @@
+<div data-controller="play-quiz" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
+  <div class="swiper-wrapper">
+    <% quiz_questions.each do |quiz_question| %>
+     <div class="swiper-slide">
+      <%= question.content %>
+      <div data-action="click->play-quiz#advance">
+      <button class="swiper-button-next"><%= question.choice_one %></button> /
+      <button class="swiper-button-next"><%= question.choice_two %></button>
+      </div>
+     </div>
+    <% end %>
+  </div>
+</div>
+
+<%# button-prev - styles for prev Navigation button <div class="swiper-button-prev">
+button-next - styles for next Navigation button <div class="swiper-button-next"> %>

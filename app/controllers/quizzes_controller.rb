@@ -4,15 +4,22 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quiz = Quiz.find(params[:id])
-    quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
-    @questions = []
-    quiz_questions.each do |quiz_question|
-      question = Question.find(quiz_question.question_id)
-      @questions << question
-    end
+    play
     @user_name = @quiz.user.user_name
     @user = @quiz.user
+  end
+
+  def play
+    # @quiz = Quiz.find(params[:id])
+    # quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
+    # @questions = []
+    # quiz_questions.each do |quiz_question|
+    #   question = Question.find(quiz_question.question_id)
+    #   @questions << question
+    # end
+    @quiz_questions = QuizQuestion.includes(:question).where(quiz_id: params[:id])
+    @questions = @quiz_questions.map(&:question)
+    @questions
   end
 
   def new
