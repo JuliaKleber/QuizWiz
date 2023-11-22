@@ -1,6 +1,11 @@
 class QuizzesController < ApplicationController
   def index
     @quizzes = Quiz.all
+    @authors = @quizzes.map { |quiz| quiz.user }
+  end
+
+  def my_own
+    @quizzes = Quiz.where(user_id: current_user)
   end
 
   def show
@@ -53,17 +58,13 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
     @quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
     @quiz_questions.each { |quiz_question| quiz_question.destroy }
-    @message = ""
     @quiz.destroy
-    redirect_to quizzes_path
+    redirect_to my_own_quizzes_path
   end
 
   def results
   end
 
-  def my_own
-    @quizzes = Quiz.where(user_id: current_user)
-  end
 
   private
 

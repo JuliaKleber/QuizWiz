@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-team">
   <div class="container-fluid">
     <div class="d-flex">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "QUIZ_WIZ__2_-removebg-preview.png" %>
     <% end %>
     </div>
@@ -9,10 +9,10 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Quiz", "#", class: "nav-link" %>
+            <%= link_to "Quiz", quizzes_path, class: "nav-link" %>
           </li>
            <li class="nav-item">
             <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>

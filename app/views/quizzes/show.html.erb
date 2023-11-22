@@ -18,7 +18,7 @@
     <%= link_to edit_quiz_path(@quiz) do %>
       <button>Edit quiz</button>
     <% end %>
-    <%= link_to @quiz, data: {turbo_method: :delete} do %>
+    <%= link_to quiz_path(@quiz), data: {turbo_method: :delete} do %>
       <button>Delete quiz</button>
     <% end %>
   <% end %>
