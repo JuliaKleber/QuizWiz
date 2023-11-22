@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  resources :quiz_questions, only: [:destroy]
   resources :quizzes do
     member do
       post :user_answers
@@ -18,16 +19,18 @@ Rails.application.routes.draw do
     collection do
       get :my_own
     end
+    resources :questions, only: [:new, :create, :edit, :update]
   end
+  resources :questions, except: [:index, :new, :create]
 
-  get "questions", to: "questions#index"
-  get "questions/new", to: "questions#new"
-  post "questions", to: "questions#create"
-  get "questions/:id", to: "questions#show"
-  get "questions/:id/edit", to: "questions#edit", as: 'edit_question'
-  patch "questions/:id", to: "questions#update"
 
-  delete 'quiz_questions/:id', to: 'quiz_questions#destroy', as: 'delete_quiz_question'
+  # get "questions", to: "questions#index"
+  # get "questions/new", to: "questions#new"
+  # post "questions", to: "questions#create"
+  # get "questions/:id", to: "questions#show"
+  # get "questions/:id/edit", to: "questions#edit", as: 'edit_question'
+  # patch "questions/:id", to: "questions#update"
+
 
   # Visit homepage as visitor & sign-up
   # // Alternate: if you are already a user the homepage will be
