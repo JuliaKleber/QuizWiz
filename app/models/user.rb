@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :user_guesses
   has_one_attached :photo
 
-  validates :user_name, presence: true, uniqueness: true,length: { minimum: 4, maximum: 20 }
+  validates :user_name, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20 }
 end
