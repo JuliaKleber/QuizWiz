@@ -1,0 +1,28 @@
+<div class="container">
+  <h3><%= @quiz.name %></h3>
+
+  <% @questions.each do |question| %>
+    <div class="card">
+      <p><%= question.content %></p>
+      <p><%= question.choice_one %> / <%= question.choice_two %></p>
+    </div>
+  <% end %>
+
+  <p>Author: <%= @user_name %></p>
+
+  <%= link_to quizzes_path(@quiz) do %>
+    <button>Go back</button>
+  <% end %>
+
+  <% if current_user == @user %>
+    <%= link_to edit_quiz_path(@quiz) do %>
+      <button>Edit quiz</button>
+    <% end %>
+    <%= link_to @quiz, data: {turbo_method: :delete} do %>
+      <button>Delete quiz</button>
+    <% end %>
+  <% end %>
+
+  <%= @message %>
+
+</div>

@@ -20,7 +20,14 @@ Rails.application.routes.draw do
     end
   end
 
+  get "questions", to: "questions#index"
+  get "questions/new", to: "questions#new"
+  post "questions", to: "questions#create"
   get "questions/:id", to: "questions#show"
+  get "questions/:id/edit", to: "questions#edit", as: 'edit_question'
+  patch "questions/:id", to: "questions#update"
+
+  delete 'quiz_questions/:id', to: 'quiz_questions#destroy', as: 'delete_quiz_question'
 
   # Visit homepage as visitor & sign-up
   # // Alternate: if you are already a user the homepage will be
