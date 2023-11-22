@@ -5,10 +5,10 @@
     <div class="card">
       <p><%= question.content %></p>
       <p><%= question.choice_one %> / <%= question.choice_two %></p>
-      <%= link_to delete_quiz_question_path(@quiz_questions[index]), data: {turbo_method: :delete} do %>
+      <%= link_to quiz_question_path(@quiz_questions[index]), data: { turbo_method: :delete } do %>
         <button>Delete question</button>
       <% end %>
-      <%= link_to edit_question_path do %>
+      <%= link_to edit_quiz_question_path(question) do %>
         <button>Edit question</button>
         <%# to do: simple form does not work %>
       <% end %>
@@ -19,7 +19,7 @@
     <button>Go back</button>
   <% end %>
 
-  <%= link_to questions_new_path(@quiz) do %>
+  <%= link_to new_quiz_question_path(@quiz) do %>
     <button>Add question</button>
   <% end %>
 
