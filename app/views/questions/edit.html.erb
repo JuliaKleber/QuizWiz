@@ -1,7 +1,7 @@
 <p>Here you can edit your questions</p>
 
 <div class="container col-lg-6 mx-auto m-3">
-  <%= simple_form_for(@question) do |l| %>
+  <%= simple_form_for([@quiz, @question]) do |l| %>
     <%= l.error_notification %>
     <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
 

@@ -1,12 +1,14 @@
+$accent: #090420;
+$secondary: #F89C5B;
 
 .btn-gradient {
   color: white;
   padding: 8px 24px;
   border-radius: 40px;
   font-weight: bold;
-  background-color: rgb(11, 9, 149);
+  background-color: $secondary;
   transition: 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid $secondary;
 }
 
 .btn-gradient:hover {

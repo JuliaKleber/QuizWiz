@@ -23,7 +23,7 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.new(quiz_params)
     @quiz.user = current_user
     if @quiz.save
-      redirect_to questions_new_path(@quiz), notice: 'Quiz was successfully created. Now please add your questions.'
+      redirect_to new_quiz_question_path(@quiz), notice: 'Quiz was successfully created. Now please add your questions.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
     @quiz.name = params[:name]
     if @quiz.update
-      redirect_to questions_new_path(@quiz), notice: 'Quiz was successfully created. Now please add your questions.'
+      redirect_to new_quiz_question_path(@quiz), notice: 'Quiz was successfully created. Now please add your questions.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -61,7 +61,8 @@ class QuizzesController < ApplicationController
   def results
   end
 
-  def mine
+  def my_own
+    @quizzes = Quiz.where(user_id: current_user)
   end
 
   private
