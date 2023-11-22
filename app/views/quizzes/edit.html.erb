@@ -1,0 +1,26 @@
+<div class="container">
+  <h3><%= @quiz.name %></h3>
+
+  <% @questions.each_with_index do |question, index| %>
+    <div class="card">
+      <p><%= question.content %></p>
+      <p><%= question.choice_one %> / <%= question.choice_two %></p>
+      <%= link_to delete_quiz_question_path(@quiz_questions[index]), data: {turbo_method: :delete} do %>
+        <button>Delete question</button>
+      <% end %>
+      <%= link_to edit_question_path do %>
+        <button>Edit question</button>
+        <%# to do: simple form does not work %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= link_to quiz_path(@quiz) do %>
+    <button>Go back</button>
+  <% end %>
+
+  <%= link_to questions_new_path(@quiz) do %>
+    <button>Add question</button>
+  <% end %>
+
+</div>
