@@ -1,12 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-team">
+<div class="navbar navbar-expand-sm navbar-team">
   <div class="container-fluid">
-    <div>
-    <h3>Quiz-Wiz</h3>
+    <div class="d-flex">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "QUIZ_WIZ-removebg-preview.png" %>
+      <%= image_tag "QUIZ_WIZ__2_-removebg-preview.png" %>
     <% end %>
     </div>
-    <div>
+    <div class="menu">
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
@@ -23,14 +22,11 @@
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "image.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            </div>
           </li>
-
+      </ul>
+      </div>
         <%# else
             = link_to "Login", new_user_session_path, class: "nav-link"
         end %>
-
-      </ul>
     </div>
   </div>
-</div>
