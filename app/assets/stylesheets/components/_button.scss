@@ -1,6 +1,3 @@
-$accent: #090420;
-$secondary: #F89C5B;
-
 .btn-gradient {
   color: white;
   padding: 8px 24px;
@@ -14,4 +11,13 @@ $secondary: #F89C5B;
 .btn-gradient:hover {
   background: linear-gradient(#d6ce93);
   color: white;
+}
+
+.btn-accent {
+  color: $accent;
+  padding: 8px 24px;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  border: 1px solid $accent;
 }
