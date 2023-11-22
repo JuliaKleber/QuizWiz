@@ -6,17 +6,12 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-group">
-    <label for="usr" class="form-label">Name:</label>
-     <input type="text" class="form-control" id="usr">
-  </div>
-  
-  <div class="form-actions d-flex justify-content-center">
-    <%= f.button :submit, class: "btn btn-primary"  %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+    </div>
+
+    <div class="form-actions d-flex justify-content-center">
+      <%= f.button :submit, class: "button"  %>
+    </div>
   <% end %>
 </div>
-
-<%= link_to root_path do %>
-  <button>Go back</button>
-<% end %>
