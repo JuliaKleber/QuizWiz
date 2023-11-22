@@ -32,6 +32,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content, :choice_one, :choice_two)
+    params.require(:question).permit(:content, :choice_one, :choice_two, :correct_choice)
   end
 end
