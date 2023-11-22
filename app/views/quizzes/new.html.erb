@@ -1,6 +1,7 @@
-<h1 class=text-center>Here you can create a new quiz </h1>
 
 <div class="container col-lg-6 mx-auto m-3">
+<h1 class=text-center>Here you can create a new quiz </h1>
+
   <%= simple_form_for(@quiz) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -11,7 +12,7 @@
   </div>
   <div class="form-group mt-2">
     <label for="pwd" class="form-label">Questions:</label>
-    <input type="password" class="form-control" id="pwd">
+    <input type="text" class="form-control" id="pwd">
   </div>
 
   <div class="form-actions d-flex justify-content-center">
