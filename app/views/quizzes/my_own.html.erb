@@ -1,7 +1,11 @@
 <% @quizzes.each do |quiz| %>
   <div class="card">
-    <%= link_to quiz.name, '#' %>
+    <%= link_to quiz.name, quiz_path(quiz) %>
   </div>
+<% end %>
+
+<%= link_to new_quiz_path do %>
+  <button>Create a new quiz</button>
 <% end %>
 
 <%= link_to root_path do %>

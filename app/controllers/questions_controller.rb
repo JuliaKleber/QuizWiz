@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @quiz = Quiz.last
+    @quiz = Quiz.find(params[:quiz_id])
   end
 
   def create
@@ -17,17 +17,15 @@ class QuestionsController < ApplicationController
     @question.user = current_user
     if @question.save
       @quiz_question = QuizQuestion.new
-      @quiz_question.quiz = Quiz.last
-      # @quiz_question.quiz = @quiz
-      # sollte nicht nur für das letzte funktionieren
+      @quiz_question.quiz_id = params[:quiz_id]
       @quiz_question.question = @question
       if @quiz_question.save
-        redirect_to questions_new_path(@quiz)
+        redirect_to new_quiz_question_path(@quiz_question.quiz), notice: "Question was added!"
       else
         render :new, status: :unprocessable_entity
       end
     else
-      render :new_quiz_path, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
