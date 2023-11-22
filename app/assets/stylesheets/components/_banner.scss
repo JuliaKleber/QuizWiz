@@ -1,4 +1,5 @@
-$purple: #090420;
+$accent: #090420;
+$secondary: #F89C5B;
 
 .banner {
   background-size: cover;
@@ -8,8 +9,8 @@ $purple: #090420;
 
 .banner h1 {
   margin: 0;
-  color: $purple;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: $accent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
 }
