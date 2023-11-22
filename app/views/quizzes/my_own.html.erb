@@ -1,13 +1,16 @@
-<% @quizzes.each do |quiz| %>
-  <div class="card">
+<div class="container">
+  <h1 class="text-center">All Quizzes</h1>
+    <% @quizzes.each do |quiz| %>
+  <div>
     <%= link_to quiz.name, quiz_path(quiz) %>
   </div>
-<% end %>
+  <% end %>
 
-<%= link_to new_quiz_path do %>
-  <button>Create a new quiz</button>
-<% end %>
+  <%= link_to new_quiz_path do %>
+    <button class="btn-gradient">Create a new quiz</button>
+  <% end %>
 
-<%= link_to root_path do %>
-  <button>Go back</button>
-<% end %>
+  <%= link_to root_path do %>
+    <button class="btn-accent">Go back</button>
+  <% end %>
+</div>

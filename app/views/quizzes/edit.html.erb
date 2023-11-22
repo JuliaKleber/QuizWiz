@@ -8,10 +8,9 @@
       <%= link_to quiz_question_path(@quiz_questions[index]), data: { turbo_method: :delete } do %>
         <button>Delete question</button>
       <% end %>
-      <%= link_to edit_quiz_question_path(question) do %>
-        <button>Edit question</button>
-        <%# to do: simple form does not work %>
-      <% end %>
+      <%# link_to edit_quiz_question_path(question) do %>
+        <%# <button>Edit question</button> %>
+      <%# end %>
     </div>
   <% end %>
 

@@ -29,20 +29,9 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
-    @question = Question.find(params[:id])
-  end
-
-  def update
-    @question = Question.new(question_params)
-    @question.user = current_user
-    @question.id = params[:id]
-    @question.update
-  end
-
   private
 
   def question_params
-    params.require(:question).permit(:content, :choice_one, :choice_two)
+    params.require(:question).permit(:content, :choice_one, :choice_two, :correct_choice)
   end
 end

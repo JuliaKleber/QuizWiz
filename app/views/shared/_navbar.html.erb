@@ -1,32 +1,36 @@
 <div class="navbar navbar-expand-sm navbar-team">
   <div class="container-fluid">
     <div class="d-flex">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "QUIZ_WIZ__2_-removebg-preview.png" %>
     <% end %>
     </div>
     <div class="menu">
       <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Quiz", "#", class: "nav-link" %>
+            <%= link_to "See quizzes", quizzes_path, class: "nav-link" %>
           </li>
-           <li class="nav-item">
-            <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete} %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "image.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up",  new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+
+            </div>
       </ul>
       </div>
-        <%# else
-            = link_to "Login", new_user_session_path, class: "nav-link"
-        end %>
     </div>
   </div>
