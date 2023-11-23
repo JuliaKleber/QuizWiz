@@ -1,10 +1,11 @@
 $accent: #090420;
-$secondary: #F89C5B;
+$secondary: rgb(178, 28, 153);
 
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: calc(100vh - 160px);
 }
 
 .banner h1 {
