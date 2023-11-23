@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   resources :quiz_questions, only: [:destroy]
   resources :quizzes do
+
     member do
       post :user_answers
       get :results
+      get :play
     end
     collection do
       get :my_own
