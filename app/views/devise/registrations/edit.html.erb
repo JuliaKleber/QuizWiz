@@ -10,10 +10,17 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+
+      <h2>
+        <%= devise_error_messages! %>
+      </h2>
+
+
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :user_name,
+                required: true%>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
@@ -24,6 +31,7 @@
     <%= f.input :photo, as: :file,
                  required: true %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
