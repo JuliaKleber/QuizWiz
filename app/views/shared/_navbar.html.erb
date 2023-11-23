@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-team">
   <div class="container-fluid">
     <div class="d-flex">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "QUIZ_WIZ__2_-removebg-preview.png" %>
-    <% end %>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "QUIZ_WIZ__2_-removebg-preview.png" %>
+      <% end %>
     </div>
     <div class="menu">
       <ul class="navbar-nav me-auto">
@@ -12,13 +12,18 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "See quizzes", quizzes_path, class: "nav-link" %>
+            <%= link_to "Quizzes", quizzes_path, class: "nav-link" %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "Create Quiz",  new_quiz_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Logout", destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete} %>
           </li>
           <li class="nav-item dropdown">
-            <%# cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= link_to edit_user_registration_path do %>
+              <%= cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown" %>
+            <% end %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -28,9 +33,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-
-            </div>
       </ul>
-      </div>
     </div>
   </div>
+</div>
