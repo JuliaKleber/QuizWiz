@@ -30,6 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def rewrite_question
+    raise
     # The question will not be edited. Instead the question gets removed from the
     # quiz_question list of the quiz from which the edit was initiated
     # and then a new question will be created for the quiz
