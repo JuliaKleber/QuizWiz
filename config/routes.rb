@@ -21,17 +21,18 @@ Rails.application.routes.draw do
     collection do
       get :my_own
     end
-    resources :questions, only: [:new, :create, :edit, :update]
+    resources :questions, only: %i[new create] do
+      member do
+        get :rewrite
+      end
+      collection do
+        post :exchange
+      end
+    end
+    # get 'questions/:id/rewrite', to: 'questions#rewrite_question', as: 'rewrite_quiz_question'
+    # post 'questions', to: 'questions#exchange_question', as: 'exchange_quiz_question'
   end
-  resources :questions, except: [:index, :new, :create]
-
-  # get "questions", to: "questions#index"
-  # get "questions/new", to: "questions#new"
-  # post "questions", to: "questions#create"
-  # get "questions/:id", to: "questions#show"
-  # get "questions/:id/edit", to: "questions#edit", as: 'edit_question'
-  # patch "questions/:id", to: "questions#update"
-
+  resources :questions, only: %i[show index]
 
   # Visit homepage as visitor & sign-up
   # // Alternate: if you are already a user the homepage will be
