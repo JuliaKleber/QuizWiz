@@ -6,8 +6,13 @@ class UserGuessesController < ApplicationController
     # user_guesses = []
     # user_guess = @question.choice
     # user_guesses << user_guess
+  end
+
+  def results
     # if QuizQuestion.last
     # redirect_to results_quiz_path
+    # show ${results}
   end
+
 
 end

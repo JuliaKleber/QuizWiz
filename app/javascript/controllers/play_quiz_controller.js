@@ -24,8 +24,13 @@ export default class extends Controller {
 
   advance() {
     this.swiper.slideNext();
-    this.button1Target.innerText;
-    this.button2Target.innerText;
+    // this.button1Target.innerText;
+    // this.button2Target.innerText;
+    
+    // # let results = 0
+    // # user_guesses.foreach do | user_guess |
+    // # if user_guess.is_correct?
+    // # results += 1
   }
 }
 
