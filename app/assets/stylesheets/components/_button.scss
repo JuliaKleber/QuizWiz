@@ -1,16 +1,18 @@
 .btn-gradient {
-  color: white;
+  color: rgb(223, 209, 209);
   padding: 8px 24px;
   border-radius: 40px;
   font-weight: bold;
   background-color: $secondary;
   transition: 0.3s ease;
   border: 1px solid $secondary;
+  transition: 0.5s;
 }
 
-.btn-gradient:hover {
+.btn-gradient:hover{
   background: linear-gradient(#d6ce93);
-  color: white;
+  color: rgb(152, 143, 152);
+  box-shadow: 4px 1px 15px 2px rgba(0,0,0,0.5);
 }
 
 .btn-accent {

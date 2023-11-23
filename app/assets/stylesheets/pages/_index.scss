@@ -1,6 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "my_own";
 
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+}
 a {
   text-decoration: none;
 }
