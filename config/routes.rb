@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   resources :quiz_questions, only: [:destroy]
   resources :quizzes do
+
     member do
       post :user_answers
       get :results
+      get :play
     end
     collection do
       get :my_own
@@ -22,7 +24,6 @@ Rails.application.routes.draw do
     resources :questions, only: [:new, :create, :edit, :update]
   end
   resources :questions, except: [:index, :new, :create]
-
 
   # get "questions", to: "questions#index"
   # get "questions/new", to: "questions#new"

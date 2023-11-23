@@ -1,13 +1,17 @@
-<div data-controller="play-quiz" class="swiper-container" data-carousel-options-value='{"direction": "vertical"}'>
-  <div class="swiper-wrapper">
-    <% quiz_questions.each do |quiz_question| %>
-     <div class="swiper-slide">
-      <%= question.content %>
-      <div data-action="click->play-quiz#advance">
-      <button class="swiper-button-next"><%= question.choice_one %></button> /
-      <button class="swiper-button-next"><%= question.choice_two %></button>
+<div  class="swiper-container" data-controller="play-quiz" data-carousel-options-value='{"direction": "horizontal"}'>
+  <div class="swiper-wrapper" >
+    <% @questions.each do |question| %>
+      <div class="swiper-slide">
+        <%= question.content %>
+        <div class="justify-content-between d-flex">
+          <div data-action="click->play-quiz#advance">
+            <%= question.choice_one %>
+          </div>
+          <div data-action="click->play-quiz#advance">
+            <%= question.choice_two %>
+          </div>
+        </div>
       </div>
-     </div>
     <% end %>
   </div>
 </div>
