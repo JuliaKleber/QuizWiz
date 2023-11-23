@@ -69,6 +69,7 @@ class QuizzesController < ApplicationController
   end
 
   def results
+
   end
 
 

@@ -1,44 +1,51 @@
 import { Controller } from '@hotwired/stimulus'
 import swiper from 'swiper'
 
-// const questions = document.querySelectorAll(".swiper-wrapper")
+const getDataToHtmlForm = () => {
+  console.log('Done!');
+  // Target in view needed where we can send the UserPicks to
+};
 
 // Connects to data-controller="play-quiz"
 export default class extends Controller {
 
-  // static targets = ["button1", "button2"]
+  static values = { questionsIds: Array }
+
+  static targets = ['userGuesses'];
 
   connect() {
     console.log('hi')
     this.swiper = new swiper(this.element);
-    // questions.forEach((question, i)=>{
-    //   console.log("hi")
-    //   if( i !=0 ) {
-    //     question.classList.add('hidden')}
-    // })
+    this.count = 0;
+    this.userPicks = [];
 
     this.swiper.on('slideChange', function () {
       console.log('slide changed');
     });
   }
 
-  advance() {
-    this.swiper.slideNext();
-    // this.button1Target.innerText;
-    // this.button2Target.innerText;
-    
-    // # let results = 0
-    // # user_guesses.foreach do | user_guess |
-    // # if user_guess.is_correct?
-    // # results += 1
+  advance(event) {
+    this.count++;
+
+    let userPick = 'choice_two';
+    if (event.target.classList.contains("choice-one")) {
+      userPick = 'choice_one';
+    }
+    this.userPicks.push(userPick);
+
+    const numberQuestions = this.questionsIdsValue.length;
+
+    console.log('------------------');
+    console.log(numberQuestions);
+    console.log(this.count);
+    console.log('------------------');
+    console.log(this.questionsIdsValue);
+    console.log(this.userPicks);
+
+    if (this.count === numberQuestions) {
+      getDataToHtmlForm();
+    } else {
+      this.swiper.slideNext()
+    }
   }
 }
-
-// Using on method after swiper initialization.
-
-// const swiper = new Swiper('.swiper-container', {
-//   // ...
-// });
-// swiper.on('slideChange', function () {
-//   console.log('slide changed');
-// });
