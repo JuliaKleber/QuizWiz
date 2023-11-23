@@ -1,20 +1,18 @@
-<div class="container">
-  <h1 class="text-center mt-3">My Quizzes</h1>
+<div class="container text-center p-4">
+  <h2 class="mt-3 mb-4 fw-bold font-monospace">My Quizzes</h2>
 
     <% @quizzes.each do |quiz| %>
-  <div class="card" style="width: 18rem;">
-   <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text"></p>
+  <div class="card mx-auto border border-0 shadow-sm p-3 mb-5 bg-body rounded" style="width: 250px;">
     <%= link_to quiz.name, quiz_path(quiz) %>
   </div>
   <% end %>
-
+<div class="btn-group d-flex justify-content-center ">
   <%= link_to new_quiz_path do %>
-    <button class="btn-gradient ">Create a new quiz</button>
+    <button class="btn-gradient">Create a new quiz</button>
   <% end %>
 
   <%= link_to root_path do %>
     <button class="btn-accent">Go back</button>
   <% end %>
+</div>
 </div>
