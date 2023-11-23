@@ -1,0 +1,22 @@
+<div  class="swiper-container" data-controller="play-quiz" data-carousel-options-value='{"direction": "horizontal"}'>
+  <div class="swiper-wrapper" >
+    <% @questions.each do |question| %>
+      <div class="swiper-slide">
+        <%= question.content %>
+        <div class="justify-content-space-between d-flex">
+          <div data-action="click->play-quiz#advance">
+            <input class="favorite styled" type="button" value="<%= question.choice_one %>" />
+          </div>
+          <div data-action="click->play-quiz#advance">
+            <input class="favorite styled" type="button" value="<%= question.choice_two %>" />
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# button-prev - styles for prev Navigation button <div class="swiper-button-prev">
+button-next - styles for next Navigation button <div class="swiper-button-next"> %>
+
+data-play-quiz-target = "button1"
