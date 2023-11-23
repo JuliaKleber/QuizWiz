@@ -1,3 +1,6 @@
+require "open-uri"
+
+
 puts 'Cleaning database...'
 
 QuizQuestion.destroy_all
@@ -10,13 +13,26 @@ puts 'Creating users...'
 
 users = []
 
-user = User.create(user_name: 'Aisiri', email: "Aisiri@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+
+user = User.new(user_name: 'Aisiri', email: "Aisiri@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save
 users << user
-user = User.create(user_name: 'Bilal', email: "Bilal@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+user = User.new(user_name: 'Bilal', email: "Bilal@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save
 users << user
-user = User.create(user_name: 'Elena', email: "Elena@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+user = User.new(user_name: 'Elena', email: "Elena@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save
 users << user
-user = User.create(user_name: 'Julia', email: "Julia@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+user = User.new(user_name: 'Julia', email: "Julia@quiz-wiz.com", password: "123456", password_confirmation: "123456")
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+user.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user.save
 users << user
 
 puts 'Creating questions...'

@@ -16,6 +16,10 @@
       <%= l.input :choice_two %>
     </div>
 
+    <div class="form-inputs">
+      <%= l.input :correct_choice, as: :select, collection: [['choice one', 'choice_one'], ['choice two', 'choice_two']], include_blank: false %>
+    </div>
+
     <div class="form-actions d-flex justify-content-center">
       <%= l.button :submit, class: "button"%>
     </div>

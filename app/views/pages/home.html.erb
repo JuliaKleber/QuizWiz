@@ -15,8 +15,12 @@
     </div>
   <% else %>
     <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
-    <button>Sign in</button>
-    <button>Log in</button>
+    <%= link_to new_user_registration_path do %>
+      <button class="btn-gradient">Sign in</button>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <button class="btn-gradient">Log in</button>
+    <% end %>
   <% end %>
   </div>
 </div>
