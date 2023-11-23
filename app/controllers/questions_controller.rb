@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
     # quiz_question.destroy
   end
 
-  def overwrite_question
+  def exchange_question
     raise
     @question = Question.new(question_params)
     @question.user = current_user
