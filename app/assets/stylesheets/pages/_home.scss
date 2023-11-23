@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+body {
+  background-color: #184051;
+}
+
+#home h1 {
+  color: white;
+  text-shadow: 0 0 26px rgba($color: #000000, $alpha: 0.2);
+  margin-bottom: 48px;
+  font-size: 38px;
+}
+
+
+#home > div > a {
+  margin: 38px;
+}
