@@ -20,8 +20,8 @@ Rails.application.routes.draw do
       get :my_own
     end
     resources :questions, only: %i[new create]
-    get 'questions/:id/edit', to: 'questions#destroy_old_connection_and_edit', as: 'edit_quiz_question'
-    post 'questions', to: 'questions#updated_question'
+    get 'questions/:id/edit', to: 'questions#edit_question', as: 'edit_quiz_question'
+    post 'questions', to: 'questions#update_question', as: 'update_quiz_question'
   end
   resources :questions, only: %i[show index]
 

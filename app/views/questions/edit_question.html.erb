@@ -1,0 +1,24 @@
+<p>Here you can edit a question</p>
+<div class="container col-lg-6 mx-auto m-3">
+  <%= form_with(model: [@quiz, @question], url: quiz_update_quiz_question_path(@quiz, @question)) do |form| %>
+    <div class="form-inputs">
+      <%= form.text_field :content, value: @question.content %>
+    </div>
+
+    <div class="form-inputs">
+      <%= form.text_field :choice_one, value: @question.choice_one %>
+    </div>
+
+    <div class="form-inputs">
+      <%= form.text_field :choice_two, value: @question.choice_two %>
+    </div>
+
+    <div class="form-inputs">
+      <%= form.select :correct_choice, [['choice one', 'choice_one'], ['choice two', 'choice_two']], {}, include_blank: false %>
+    </div>
+
+    <div class="form-actions d-flex justify-content-center">
+      <%= form.submit "Submit", class: "button" %>
+    </div>
+  <% end %>
+</div>

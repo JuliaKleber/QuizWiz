@@ -29,18 +29,19 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def destroy_old_connection_and_edit_question
+  def rewrite_question
     # question will not be edited. Instead the question gets removed from the
     # quiz_question list for the quiz from which the edit was initiated
     # and then a new question will be created for the quiz
     @quiz = Quiz.find(params[:id])
     @question = Question.find(params[:quiz_id])
-    quiz_questions = QuizQuestion.where(quiz_id: params[:id])
-    quiz_question = quiz_questions.find_by(question_id: params[:quiz_id])
-    quiz_question.destroy
+    # quiz_questions = QuizQuestion.where(quiz_id: params[:id])
+    # quiz_question = quiz_questions.find_by(question_id: params[:quiz_id])
+    # quiz_question.destroy
   end
 
-  def updated_question
+  def overwrite_question
+    raise
     @question = Question.new(question_params)
     @question.user = current_user
     if @question.save
