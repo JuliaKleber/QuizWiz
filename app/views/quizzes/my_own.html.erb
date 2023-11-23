@@ -2,6 +2,7 @@
   <h1 class="text-center">All Quizzes</h1>
     <% @quizzes.each do |quiz| %>
   <div>
+    <%= quiz.id %>
     <%= link_to quiz.name, quiz_path(quiz) %>
   </div>
   <% end %>
