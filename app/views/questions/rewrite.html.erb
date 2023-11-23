@@ -1,16 +1,17 @@
-<p>Here you can edit a question</p>
+<h2>Here you can edit a question</h2>
+
 <div class="container col-lg-6 mx-auto m-3">
-  <%= form_with(model: [@quiz, @question], url: quiz_exchange_quiz_question_path(@quiz, @question), method: :post) do |form| %>
+  <%= form_with(model: [@quiz, @question], url: exchange_quiz_questions_path(@quiz, @question), method: :post) do |form| %>
     <div class="form-inputs">
-      <%= form.text_field :content, value: @question.content %>
+      <%= form.text_field :content, value: @old_question.content %>
     </div>
 
     <div class="form-inputs">
-      <%= form.text_field :choice_one, value: @question.choice_one %>
+      <%= form.text_field :choice_one, value: @old_question.choice_one %>
     </div>
 
     <div class="form-inputs">
-      <%= form.text_field :choice_two, value: @question.choice_two %>
+      <%= form.text_field :choice_two, value: @old_question.choice_two %>
     </div>
 
     <div class="form-inputs">

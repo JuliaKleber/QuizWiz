@@ -19,9 +19,16 @@ Rails.application.routes.draw do
     collection do
       get :my_own
     end
-    resources :questions, only: %i[new create]
-    get 'questions/:id/rewrite', to: 'questions#rewrite_question', as: 'rewrite_quiz_question'
-    post 'questions', to: 'questions#exchange_question', as: 'exchange_quiz_question'
+    resources :questions, only: %i[new create] do
+      member do
+        get :rewrite
+      end
+      collection do
+        post :exchange
+      end
+    end
+    # get 'questions/:id/rewrite', to: 'questions#rewrite_question', as: 'rewrite_quiz_question'
+    # post 'questions', to: 'questions#exchange_question', as: 'exchange_quiz_question'
   end
   resources :questions, only: %i[show index]
 

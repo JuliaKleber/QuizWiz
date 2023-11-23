@@ -8,7 +8,7 @@
       <%= link_to quiz_question_path(@quiz_questions[index]), data: { turbo_method: :delete } do %>
         <button>Delete question</button>
       <% end %>
-      <%= link_to quiz_rewrite_quiz_question_path(@quiz, question) do %>
+      <%= link_to rewrite_quiz_question_path(@quiz, question) do %>
         <button>Edit question</button>
       <% end %>
     </div>
