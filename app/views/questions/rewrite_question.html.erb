@@ -1,6 +1,6 @@
 <p>Here you can edit a question</p>
 <div class="container col-lg-6 mx-auto m-3">
-  <%= form_with(model: [@quiz, @question], url: quiz_exchange_quiz_question_path(@quiz, @question)) do |form| %>
+  <%= form_with(model: [@quiz, @question], url: quiz_exchange_quiz_question_path(@quiz, @question), method: :post) do |form| %>
     <div class="form-inputs">
       <%= form.text_field :content, value: @question.content %>
     </div>
