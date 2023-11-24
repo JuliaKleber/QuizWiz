@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
     @quiz = Quiz.find(params[:quiz_id])
+    redirect_to root_path if current_user != @quiz.user
   end
 
   def create
@@ -32,7 +33,7 @@ class QuestionsController < ApplicationController
   def rewrite
     # The question will not be edited. Instead the question gets removed from the
     # quiz_question list of the quiz from which the edit was initiated
-    # and then a new question will be created for the quiz
+    # and then a new question will be created for that quiz
     new
     @old_question = Question.find(params[:id])
     quiz_question = QuizQuestion.where(quiz_id: params[:quiz_id]).where(question_id: params[:id]).first
