@@ -3,6 +3,7 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
+UserGuess.destroy_all
 QuizQuestion.destroy_all
 Quiz.destroy_all
 Question.destroy_all
@@ -41,24 +42,24 @@ questions = []
 
 question = Question.new(content: 'What is the capital of France?', choice_one: 'Paris', choice_two: 'London', correct_choice: 'choice_one')
 questions << question
-question = Question.new(content: 'Which planet is known as the "Red Planet"?', choice_one: 'Mars', choice_two: 'Venus', correct_choice: 'choice one')
+question = Question.new(content: 'Which planet is known as the "Red Planet"?', choice_one: 'Mars', choice_two: 'Venus', correct_choice: 'choice_one')
 questions << question
-question = Question.new(content: 'What is the largest mammal in the world?', choice_one: 'Elephant', choice_two: 'Blue Whale', correct_choice: 'choice two')
+question = Question.new(content: 'What is the largest mammal in the world?', choice_one: 'Elephant', choice_two: 'Blue Whale', correct_choice: 'choice_two')
 questions << question
-question = Question.new(content: 'In which year did Christopher Columbus reach the Americas?', choice_one: '1492', choice_two: '1776', correct_choice: 'choice one')
+question = Question.new(content: 'In which year did Christopher Columbus reach the Americas?', choice_one: '1492', choice_two: '1776', correct_choice: 'choice_one')
 questions << question
-question = Question.new(content: 'What is the main ingredient in guacamole?', choice_one: 'Avocado', choice_two: 'Tomato', correct_choice: 'choice one')
+question = Question.new(content: 'What is the main ingredient in guacamole?', choice_one: 'Avocado', choice_two: 'Tomato', correct_choice: 'choice_one')
 questions << question
-question = Question.new(content: 'Who wrote the play "Romeo and Juliet"?', choice_one: 'William Shakespeare', choice_two: 'Jane Austin', correct_choice: 'choice one')
+question = Question.new(content: 'Who wrote the play "Romeo and Juliet"?', choice_one: 'William Shakespeare', choice_two: 'Jane Austin', correct_choice: 'choice_one')
 questions << question
-question = Question.new(content: 'Which of the following is a primary color?', choice_one: 'Green', choice_two: 'Blue', correct_choice: 'choice two')
+question = Question.new(content: 'Which of the following is a primary color?', choice_one: 'Green', choice_two: 'Blue', correct_choice: 'choice_two')
 questions << question
-question = Question.new(content: 'What is the capital of Japan?', choice_one: 'Beijing', choice_two: 'Tokyo', correct_choice: 'choice two')
+question = Question.new(content: 'What is the capital of Japan?', choice_one: 'Beijing', choice_two: 'Tokyo', correct_choice: 'choice_two')
 questions << question
-question = Question.new(content: 'What is the currency of the United Kingdom?', choice_one: 'Euro', choice_two: 'Pound Sterling', correct_choice: 'choice two')
+question = Question.new(content: 'What is the currency of the United Kingdom?', choice_one: 'Euro', choice_two: 'Pound Sterling', correct_choice: 'choice_two')
 questions << question
 question = Question.new(content: 'What is the largest ocean on Earth?', choice_one: 'Atlantic Ocean', choice_two: 'Pacific
-  Ocean', correct_choice: 'choice two')
+  Ocean', correct_choice: 'choice_two')
 questions << question
 
 questions.each_with_index do |quest, i|

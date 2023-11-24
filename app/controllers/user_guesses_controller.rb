@@ -1,37 +1,24 @@
 class UserGuessesController < ApplicationController
-
-  # def create
-  #   user_guess_arrays = params[:user_picks].split(";").map(&:split)
-  #   user_guess_arrays.each do |(quiz_question_id, choice)|
-
-  #     # retrieve corresponding question
-  #     # check if correct
-  #     # populate .is_correct? field
-  #     # connect the current_user & quiz_question
-  #     # save
-  #   end
-  # end
-
-    user_picks = params[:user_pick]
-    quiz = params[:quiz_id]
+  def create
+    user_picks_string = params[:user_picks]
+    user_picks_array = user_picks_string.split(";").map(&:split)
+    # quiz = params[:quiz_id]
     # questions = params[:questions]
-    user_picks.each do |pick, index|
+    user_picks_array.each do |(id, pick)|
       user_guess = UserGuess.new
       user_guess.user = current_user
-      if pick == questions[index].correct_choice
-        user_guess.is_correct = true
-      else
-        user_guess.is_correct = false
-      end
+      user_guess.is_correct = (pick == Question.find(id.to_i).correct_choice)
       user_guess.save
     end
-    redirect_to results_quiz(quiz)
+    redirect_to user_guesses_results_path
   end
 
-  # private
-
-  # def user_pick_params
-  #   params.require(:user_guess).permit(:userPick)
-  # end
-
+  def results
+    user_guesses = UserGuess.where(user_id: current_user)
+    number_questions = user_guesses.length
+    @count_correct = 0
+    user_guesses.each { |guess| @count_correct += 1 if guess.is_correct }
+    @count_wrong = number_questions - @count_correct
+    user_guesses.each { |user_guess| user_guess.destroy }
+  end
 end
