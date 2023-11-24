@@ -21,5 +21,4 @@ class UserGuessesController < ApplicationController
   # def user_pick_params
   #   params.require(:user_guess).permit(:userPick)
   # end
-
 end
