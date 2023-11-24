@@ -1,6 +1,5 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "my_own";
 
 html {
   height: 100%;
@@ -10,11 +9,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  color: rgb(223, 209, 209);
+}
+
+.static-body-background-image {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url('quizpic.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .wrapper {
   height: 100%;
 }
+
 a {
   text-decoration: none;
 }

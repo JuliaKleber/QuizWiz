@@ -5,21 +5,25 @@
     <div class="card">
       <p><%= question.content %></p>
       <p><%= question.choice_one %> / <%= question.choice_two %></p>
-      <%= link_to quiz_question_path(@quiz_questions[index]), data: { turbo_method: :delete } do %>
-        <button>Delete question</button>
-      <% end %>
-      <%= link_to rewrite_quiz_question_path(@quiz, question) do %>
-        <button>Edit question</button>
-      <% end %>
+      <div class="d-flex justify-content-center">
+        <%= link_to quiz_question_path(@quiz_questions[index]), data: { turbo_method: :delete } do %>
+          <button class="btn-gradient">Delete question</button>
+        <% end %>
+        <%= link_to rewrite_quiz_question_path(@quiz, question) do %>
+          <button class="btn-gradient">Edit question</button>
+        <% end %>
+      </div>
     </div>
   <% end %>
 
-  <%= link_to quiz_path(@quiz) do %>
-    <button>Go back</button>
-  <% end %>
+  <div class="d-flex justify-content-center">
+    <%= link_to quiz_path(@quiz) do %>
+      <button class="btn-gradient">Go back</button>
+    <% end %>
 
-  <%= link_to new_quiz_question_path(@quiz) do %>
-    <button>Add question</button>
-  <% end %>
+    <%= link_to new_quiz_question_path(@quiz) do %>
+      <button class="btn-gradient">Add question</button>
+    <% end %>
+  </div>
 
 </div>
