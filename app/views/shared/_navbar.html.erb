@@ -22,7 +22,7 @@
           </li>
           <li class="nav-item dropdown">
             <%= link_to edit_user_registration_path do %>
-              <%# cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown" %>
+             <%= cl_image_tag current_user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown" %>
             <% end %>
           </li>
         <% else %>
