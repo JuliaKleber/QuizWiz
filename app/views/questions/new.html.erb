@@ -1,12 +1,11 @@
 <div class="wrapper">
-  <p>Here you can create your questions</p>
   <div class="container col-lg-6 mx-auto m-3">
     <%= simple_form_for([@quiz, @question]) do |l| %>
       <%= l.error_notification %>
       <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= l.input :content %>
+        <%= l.input :content, input_html: { name: 'question[name]' } %>
       </div>
 
       <div class="form-inputs">
@@ -22,12 +21,14 @@
       </div>
 
       <div class="form-actions d-flex justify-content-center">
-        <%= l.button :submit, class: "button"%>
+        <%= l.button :submit, class: "btn-gradient"%>
       </div>
     <% end %>
 
-    <%= link_to my_own_quizzes_path do %>
-      <button>Done</button>
-    <% end %>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+      <%= link_to my_own_quizzes_path do %>
+        <button class="btn-gradient">Quit</button>
+      <% end %>
+    </div>
   </div>
 </div>

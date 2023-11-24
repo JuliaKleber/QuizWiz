@@ -10,8 +10,8 @@
 }
 
 .btn-gradient:hover{
-  background: linear-gradient(#d6ce93);
-  color: rgb(152, 143, 152);
+  // background: linear-gradient(#d6ce93);
+  color: $accent;
   box-shadow: 4px 1px 15px 2px rgba(0,0,0,0.5);
 }
 
