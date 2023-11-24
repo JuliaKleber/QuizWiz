@@ -15,12 +15,6 @@ class QuizzesController < ApplicationController
   end
 
   def play
-    # quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
-    # @questions = []
-    # quiz_questions.each do |quiz_question|
-    #   question = Question.find(quiz_question.question_id)
-    #   @questions << question
-    # end
     @quiz = Quiz.find(params[:id])
     @quiz_questions = QuizQuestion.includes(:question).where(quiz_id: params[:id])
     @questions = @quiz_questions.map(&:question)
@@ -42,6 +36,7 @@ class QuizzesController < ApplicationController
 
   def edit
     @quiz = Quiz.find(params[:id])
+    redirect_to root_path if current_user != @quiz.user
     @quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
     @questions = []
     @quiz_questions.each do |quiz_question|
@@ -69,7 +64,12 @@ class QuizzesController < ApplicationController
   end
 
   def results
-
+    user_guesses = UserGuess.where(user_id: current_user)
+    number_questions = user_guessses.length
+    @count_correct = 0
+    user_guesses.each { |guess| @count_correct += 1 if guess.is_correct }
+    @count_wrong = number_questions - @count_correct
+    user_guesses.each { |user_guess| user_guess.destroy }
   end
 
 

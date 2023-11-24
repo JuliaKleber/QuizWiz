@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :quiz_questions, only: [:destroy]
+  resources :user_guesses, only: [:destroy]
+
   resources :quizzes do
     resources :user_guesses, only: [:create]
     member do

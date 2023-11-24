@@ -5,4 +5,6 @@ class QuizQuestionsController < ApplicationController
     @quiz_question.destroy
     redirect_to edit_quiz_path(@quiz)
   end
+
+  
 end
