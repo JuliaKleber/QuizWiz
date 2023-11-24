@@ -24,6 +24,7 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
     @quiz_questions = QuizQuestion.includes(:question).where(quiz_id: params[:id])
     @questions = @quiz_questions.map(&:question)
+    @user_guess = UserGuess.new
   end
 
   def new

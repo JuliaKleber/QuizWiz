@@ -2,24 +2,23 @@
   <div class="swiper-wrapper" >
     <% @questions.each do |question| %>
       <div class="swiper-slide">
-        <%= question.content %>
-        <div class="justify-content-space-between d-flex">
+      <div class="justify-content-space-between d-flex">
+          <%= question.content %>
           <div data-action="click->play-quiz#advance">
-            <input class="favorite styled choice-one" type="button" value="<%= question.choice_one %>" />
+           <input class="favorite styled choice-one" type="button" value="<%= question.choice_one %>" />
           </div>
           <div data-action="click->play-quiz#advance">
-            <input class="favorite styled choice-two" type="button" value="<%= question.choice_two %>" />
+           <input class="favorite styled choice-two" type="button" value="<%= question.choice_two %>" />
           </div>
         </div>
       </div>
     <% end %>
   </div>
-  <div>
-<%# Here we need a form with a target so that we can pass the userPicks
-to the form as values (hidden) or whatever from the js-controller %>
 
-  </div>
+  <%= simple_form_for [@user_guess], class: "d-none", data: { play_quiz_target: "submitResults", action: "formdata->play-quiz#submit" } do |f| %>
+    <%= f.submit %>
+  <% end %>
 </div>
 
-<%# button-prev - styles for prev Navigation button <div class="swiper-button-prev">
-button-next - styles for next Navigation button <div class="swiper-button-next"> %>
+<%# form with target so that we can pass the userPicks
+to the form as values (hidden) or whatever from the js-controller

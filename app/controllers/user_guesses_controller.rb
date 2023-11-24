@@ -1,46 +1,21 @@
 class UserGuessesController < ApplicationController
   def create
-    user_guesses = params[:user_pick]
-
-    # @question.user = current_user
-    # @quiz_question = QuizQuestion.find(params[:id])
-    # @answer = params[:answer]
-    # if @answer == Question.find(id: quiz_question_id).
-    @user_guess = UserGuess.new(user_pick_params)
-
-
-
-
-    # when @question.choice_one || @question.choice_two clicked
-    # user_guesses = []
-    # user_guess = @question.choice
-    # user_guesses << user_guess
-
-
-
+    user_guess_arrays = params[:user_picks].split(";").map(&:split)
+    user_guess_arrays.each do |(quiz_question_id, choice)|
+      
+      # retrieve corresponding question
+      # check if correct
+      # populate .is_correct? field
+      # connect the current_user & quiz_question
+      # save
+    end
   end
 
-  def results
-    # if QuizQuestion.last
-    # redirect_to results_quiz_path
-    # show ${results}
-  end
 
   private
 
   def user_pick_params
-    params.require(:user_guess).permit(:userPick)
+    params.require(:user_guess).permit(:user_picks)
   end
 
 end
-
-
-# create_table "user_guesses", force: :cascade do |t|
-#   t.bigint "user_id", null: false
-#   t.bigint "quiz_question_id", null: false
-#   t.boolean "is_correct"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.index ["quiz_question_id"], name: "index_user_guesses_on_quiz_question_id"
-#   t.index ["user_id"], name: "index_user_guesses_on_user_id"
-# end
