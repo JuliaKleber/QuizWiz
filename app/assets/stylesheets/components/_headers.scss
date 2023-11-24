@@ -1,3 +1,6 @@
-h2 {
+@import '../config/colors.scss';
+
+h1 h2 h3 {
+  color: $tertiary;
   text-align: center;
 }
