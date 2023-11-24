@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url('quizpic.png') %> );">
+  <div class="banner text-center">
   <div id="home">
     <h1><strong>Bring The Fun Back</strong>!</h1>
     <div class="mt-4">
@@ -15,7 +15,6 @@
       <% end %>
     </div>
   <% else %>
-    <p> This is an app where you can create your own quizzes and play quizzes created by other users</p>
     <%= link_to new_user_registration_path do %>
       <button class="btn-gradient">Sign in</button>
     <% end %>

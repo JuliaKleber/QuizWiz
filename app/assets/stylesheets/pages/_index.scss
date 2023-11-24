@@ -12,6 +12,15 @@ body {
   min-height: 100%;
 }
 
+.static-body-background-image {
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)), url('quizpic.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+
 .wrapper {
   height: 100%;
 }
