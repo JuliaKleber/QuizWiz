@@ -3,15 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :quiz_questions, only: [:destroy]
-<<<<<<< HEAD
   resources :user_guesses, only: [:create]
-=======
-  resources :user_guesses, only: [:destroy]
+  get 'user_guesses/results', to: 'user_guesses#results'
 
->>>>>>> master
   resources :quizzes do
     member do
-      get :results
+      # get :results
       get :play
     end
     collection do

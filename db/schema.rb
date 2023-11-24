@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_22_144517) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_24_141945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,11 +72,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_144517) do
 
   create_table "user_guesses", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "quiz_question_id", null: false
     t.boolean "is_correct"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["quiz_question_id"], name: "index_user_guesses_on_quiz_question_id"
     t.index ["user_id"], name: "index_user_guesses_on_user_id"
   end
 
@@ -99,6 +97,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_22_144517) do
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "users"
-  add_foreign_key "user_guesses", "quiz_questions"
   add_foreign_key "user_guesses", "users"
 end
