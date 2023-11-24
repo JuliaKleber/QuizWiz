@@ -10,18 +10,20 @@
 
   <p>Author: <%= @user_name %></p>
 
-  <%= link_to my_own_quizzes_path(@quiz) do %>
-    <button>Go back</button>
-  <% end %>
+  <div class="d-flex justify-content-center">
+    <%= link_to my_own_quizzes_path(@quiz) do %>
+      <button class="btn-gradient">Go back</button>
+    <% end %>
 
-  <% if current_user == @user %>
-    <%= link_to edit_quiz_path(@quiz) do %>
-      <button>Edit quiz</button>
+    <% if current_user == @user %>
+      <%= link_to edit_quiz_path(@quiz) do %>
+        <button class="btn-gradient">Edit quiz</button>
+      <% end %>
+      <%= link_to quiz_path(@quiz), data: {turbo_method: :delete} do %>
+        <button class="btn-gradient">Delete quiz</button>
+      <% end %>
     <% end %>
-    <%= link_to quiz_path(@quiz), data: {turbo_method: :delete} do %>
-      <button>Delete quiz</button>
-    <% end %>
-  <% end %>
+  </div>
 
   <%= @message %>
 

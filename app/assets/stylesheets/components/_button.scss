@@ -7,11 +7,12 @@
   transition: 0.3s ease;
   border: 1px solid $secondary;
   transition: 0.5s;
+  margin: 10px;
 }
 
 .btn-gradient:hover{
-  background: linear-gradient(#d6ce93);
-  color: rgb(152, 143, 152);
+  // background: linear-gradient(#d6ce93);
+  color: $accent;
   box-shadow: 4px 1px 15px 2px rgba(0,0,0,0.5);
 }
 
