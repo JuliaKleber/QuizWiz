@@ -60,7 +60,7 @@ class QuizzesController < ApplicationController
     @quiz_questions = QuizQuestion.where(quiz_id: @quiz.id)
     @quiz_questions.each { |quiz_question| quiz_question.destroy }
     @quiz.destroy
-    redirect_to my_own_quizzes_path
+    redirect_to my_own_quizzes_path, status: :see_other
   end
 
   def results
