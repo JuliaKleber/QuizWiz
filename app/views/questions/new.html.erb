@@ -5,7 +5,7 @@
       <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= l.input :content, input_html: { name: 'question[name]' } %>
+        <%= l.input :content %>
       </div>
 
       <div class="form-inputs">
