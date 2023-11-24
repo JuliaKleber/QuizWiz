@@ -5,7 +5,7 @@
       <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= l.input :content %>
+        <%= l.input :content, label: "Question"%>
       </div>
 
       <div class="form-inputs">
@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-inputs">
-        <%= l.input :correct_choice, as: :select, collection: [['choice one', 'choice_one'], ['choice two', 'choice_two']], include_blank: false %>
+        <%= l.input :correct_choice, as: :select, collection: [['... ', '...'], [ 'choice one', 'choice_one'], ['choice two', 'choice_two']], include_blank: false %>
       </div>
 
       <div class="form-actions d-flex justify-content-center">

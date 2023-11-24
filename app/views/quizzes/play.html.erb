@@ -16,6 +16,6 @@
   </div>
 
   <%= simple_form_for [@user_guess], class: "d-none", data: { play_quiz_target: "submitResults", action: "formdata->play-quiz#submit" } do |f| %>
-    <%= f.submit %>
+    <p><%= f.submit "Submit Results"%></p>
   <% end %>
 </div>
