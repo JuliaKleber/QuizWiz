@@ -1,6 +1,6 @@
 .navbar-team {
   justify-content: space-between;
-  background: $accent;
+  background: $accent-color;
 }
 
 .navbar-brand img {
@@ -12,7 +12,7 @@
 }
 
 .container-fluid {
-  background-color: $accent;
+  background-color: $accent-color;
 }
 
 .navbar-nav .nav-link {
