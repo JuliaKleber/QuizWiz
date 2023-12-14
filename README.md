@@ -67,7 +67,10 @@ Open your browser and navigate to localhost:3000 to start using the application.
 ## Authors
 
 [Ehiaghe Aisiri](https://github.com/aghe-eng)
+
 [Bilal Can Sinaci](https://github.com/canosin46)
+
 [Elena Voda](https://github.com/ElenaVoda)
+
 [Julia Kleber](https://github.com/GoldieCrystal)
 
