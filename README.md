@@ -37,7 +37,7 @@ Clone the repository:
 Navigate into the directory:
 
   ```bash
-  cd quiz-application
+  cd QuizWiz
   ```
 
 Install dependencies:
