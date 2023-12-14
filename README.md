@@ -5,7 +5,9 @@ This is a simple quiz application built with Ruby on Rails. The application allo
 ## Features
 
 - User authentication
-- Quiz creation and participation
+- Quiz creation
+- Editing and Deleting Quizzes
+- Playing quizzes
 - Results calculation
 
 ## Code Snippet
@@ -61,6 +63,10 @@ Open your browser and navigate to localhost:3000 to start using the application.
 
 ![image](https://github.com/GoldieCrystal/QuizWiz/assets/142741980/ad0a408e-c171-4cf1-97ee-b0c88e257722)
 
-## Author
+## Authors
 
-[GoldieCrystal](https://github.com/GoldieCrystal)
+[Ehiaghe Aisiri](https://github.com/aghe-eng)
+[Bilal Can Sinaci](https://github.com/canosin46)
+[Elena Voda](https://github.com/ElenaVoda)
+[Julia Kleber](https://github.com/GoldieCrystal)
+
