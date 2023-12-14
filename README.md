@@ -24,6 +24,7 @@ def results
   user_guesses.each { |user_guess| user_guess.destroy }
 end
 ```
+
 This method retrieves all the guesses made by the current user, counts the number of correct guesses, calculates the number of wrong guesses, and then destroys all the user's guesses.
 
 ## Installation
