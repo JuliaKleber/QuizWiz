@@ -1,4 +1,4 @@
-# Quiz Application
+# QuizWiz
 
 This is a simple quiz application built with Ruby on Rails. The application allows users to take quizzes and view their results.
 
@@ -79,4 +79,4 @@ This method retrieves all the guesses made by the current user, counts the numbe
 
 [Elena Voda](https://github.com/ElenaVoda)
 
-[Julia Kleber](https://github.com/GoldieCrystal)
+[Julia Kleber](https://github.com/JuliaKleber)
