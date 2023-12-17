@@ -22,7 +22,7 @@ This is a simple quiz application built with Ruby on Rails. The application allo
 Clone the repository:
 
   ```bash
-  git clone https://github.com/GoldieCrystal/QuizWiz.git
+  git clone https://github.com/JuliaKleber/QuizWiz.git
   ```
 
 Navigate into the directory:
