@@ -13,9 +13,9 @@ This is a simple quiz application built with Ruby on Rails. The application allo
 ## Built with
 
 - Ruby on Rails
+- Javascript / Stimulus
 - SCSS
 - Bootstrap
-- Javascript / Stimulus
   
 ## Installation
 
