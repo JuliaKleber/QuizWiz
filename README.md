@@ -67,6 +67,10 @@ end
 
 This method retrieves all the guesses made by the current user, counts the number of correct guesses, calculates the number of wrong guesses, and then destroys all the user's guesses.
 
+## Link
+
+https://quiz-wiz-2b7ab4f706ae.herokuapp.com/
+
 ## Screenshot
 
 ![image](https://github.com/GoldieCrystal/QuizWiz/assets/142741980/ad0a408e-c171-4cf1-97ee-b0c88e257722)
