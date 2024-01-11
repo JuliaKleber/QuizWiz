@@ -52,8 +52,6 @@ Open your browser and navigate to localhost:3000 to start using the application.
 
 ## Screenshot
 
-![image](https://github.com/GoldieCrystal/QuizWiz/assets/142741980/ad0a408e-c171-4cf1-97ee-b0c88e257722)
-
 ![image](https://github.com/JuliaKleber/QuizWiz/assets/142741980/2f7a2ce2-09c0-4110-ad90-d607e9bee5af)
 
 ## Authors
