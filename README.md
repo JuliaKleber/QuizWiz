@@ -1,6 +1,6 @@
 # QuizWiz
 
-This is a simple quiz application built with Ruby on Rails. The application allows users to take quizzes and view their results.
+This is a simple quiz application built with Ruby on Rails. The application allows users to create quizzes, take quizzes and view their results.
 
 ## Features
 
