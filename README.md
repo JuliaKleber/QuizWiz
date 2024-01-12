@@ -7,7 +7,7 @@ This is a simple quiz application built with Ruby on Rails. The application allo
 - User authentication
 - Quiz creation
 - Editing and deleting quizzes
-- Playing quizzes
+- Solving quizzes
 - Results calculation
 
 ## Built with
