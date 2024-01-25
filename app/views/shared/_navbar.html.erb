@@ -8,11 +8,11 @@
     <div class="menu">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <%# li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
+          <%#li%>
           <li class="nav-item">
-            <%= link_to "Quizzes", quizzes_path, class: "nav-link" %>
+            <%= link_to "Solve Quiz", quizzes_path, class: "nav-link" %>
           </li>
            <li class="nav-item">
             <%= link_to "Create Quiz",  new_quiz_path, class: "nav-link" %>

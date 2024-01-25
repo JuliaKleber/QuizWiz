@@ -1,16 +1,16 @@
-<div class="row">
-  <div class="col-12 col-md-6 offset-lg-3">
-    <div class="bg-white rounded p-3 shadow">
-    <p>Choose a quiz to play</p>
-    <% @quizzes.each do |quiz| %>
-      <div class="card">
-        <%= link_to quiz.name, play_quiz_path(quiz) %>
-      </div>
-    <% end %>
+<div class="m-4 d-flex justify-content-center">
+  <div class="col-12 col-md-6">
+    <div class="play-card">
+      <p>Choose a quiz to play</p>
+      <% @quizzes.each do |quiz| %>
+        <div class="card">
+          <%= link_to quiz.name, play_quiz_path(quiz) %>
+        </div>
+      <% end %>
 
-    <%= link_to root_path do %>
-      <button>Go back</button>
-    <% end %>
+      <%= link_to root_path do %>
+        <button>Go back</button>
+      <% end %>
+    </div>
   </div>
- </div>
 </div>

@@ -1,14 +1,23 @@
-<div class="swiper-container" data-controller="play-quiz" data-carousel-options-value='{"direction": "horizontal"}' data-play-quiz-questions-ids-value='<%= @questions.map(&:id).to_json %>'>
+<div class="swiper-container d-flex flex-column align-items-center"
+     data-controller="play-quiz"
+     data-carousel-options-value='{"direction": "horizontal"}'
+     data-play-quiz-questions-ids-value='<%= @questions.map(&:id).to_json %>'>
   <div class="swiper-wrapper" >
     <% @questions.each do |question| %>
-      <div class="swiper-slide">
-      <div class="justify-content-space-between d-flex">
+      <div class="swiper-slide d-flex flex-column align-items-center justify-content-center">
+        <div class="play-card">
           <%= question.content %>
-          <div data-action="click->play-quiz#advance">
-           <input class="favorite styled choice-one" type="button" value="<%= question.choice_one %>" />
-          </div>
-          <div data-action="click->play-quiz#advance">
-           <input class="favorite styled choice-two" type="button" value="<%= question.choice_two %>" />
+          <div class="m-2 d-flex flex-row">
+            <div data-action="click->play-quiz#advance">
+              <input class="m-1 favorite styled choice-one btn-gradient"
+                    type="button"
+                    value="<%= question.choice_one %>" />
+            </div>
+            <div data-action="click->play-quiz#advance">
+              <input class="m-1 favorite styled choice-two btn-gradient"
+                    type="button"
+                    value="<%= question.choice_two %>" />
+            </div>
           </div>
         </div>
       </div>
